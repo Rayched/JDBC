@@ -2,11 +2,14 @@ package org.example;
 
 import org.example.container.Container;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     public void run(){
         Scanner sc = Container.scanner;
+        List<Article> articles = new ArrayList<>();
         int articleLastId = 0; //게시물 번호
 
         while(true){
@@ -24,6 +27,8 @@ public class App {
 
                 Article article = new Article(id, title, content);
                 System.out.println("생성된 게시물 객체: " + article);
+
+                articles.add(article);
 
                 System.out.printf("%d번 게시물이 등록되었습니다.\n", article.id);
             }
